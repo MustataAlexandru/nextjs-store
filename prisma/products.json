@@ -1,0 +1,27 @@
+[{
+    "name" : "avant-garde lamp",
+    "company" : "Modenza",
+    "description" : "Cloud bread VHS hell of banjo bicycle rights",
+    "featured" : true,
+    "image" : "https://images.pexels.com/photos/943150/pexels-photo-943150.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price" : 100,
+    "clerkId": "clerkId"
+  },
+  {
+    "name" : "lamp",
+    "company" : "Modenza",
+    "description" : "Cloud bread VHS hell of banjo bicycle rights",
+    "featured" : true,
+    "image" : "https://images.pexels.com/photos/943150/pexels-photo-943150.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price" : 100,
+    "clerkId": "clerkId"
+  },
+  {
+    "name" : "byke",
+    "company" : "Modenza",
+    "description" : "Cloud bread VHS hell of banjo bicycle rights",
+    "featured" : true,
+    "image" : "https://images.pexels.com/photos/943150/pexels-photo-943150.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price" : 100,
+    "clerkId": "clerkId"
+  }]
