@@ -23,7 +23,7 @@ export default function ProductsList({ products }: { products: Product[] }) {
                       src={image}
                       alt={name}
                       fill
-                      size="(max-width:768px) 100vw , (max-width:1200px) 50vw , 33vw"
+                      sizes="(max-width:768px) 100vw , (max-width:1200px) 50vw , 33vw"
                       className="w-full rounded object-cover"
                     ></Image>
                   </div>
