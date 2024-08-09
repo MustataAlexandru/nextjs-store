@@ -20,11 +20,12 @@ export default async function SingleProductPage({params} : {params: {id:string}}
                 <Image src={image} alt={name} fill sizes='(max-width:768px) 100vw, (max-width:1200px) 50%, 33vw' priority className='w-full rounded object-cover' />
             </div>
             {/* PRODUCT INFO */}
-            <div className='flex gap-x-8 items-center'>
+            <div className='flex gap-x-8 items-start flex-col'>
+                <div className='flex gap-8'>
                 <h1 className='capitalize text-3xl font-bold'>{name}</h1>
                 <FavoriteToggleButton productId={params.id} />
-            </div>
-            <ProductRating productId={params.id} />
+                <ProductRating productId={params.id} />
+                </div>
             <h4 className='text-xl mt-2'>{company}</h4>
             <p className='mt-3 text-md bg-muted inline-block p-2 rounded'>
                 {dollarsAmount}
@@ -33,6 +34,8 @@ export default async function SingleProductPage({params} : {params: {id:string}}
                 {description}
             </p>
             <AddToCart productId={params.id} />
+            </div>
+            
         </div>
 
     </section>
