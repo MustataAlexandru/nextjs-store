@@ -5,9 +5,13 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: "images.pexels.com"
+            },
+            {
+                protocol: 'https',
+                hostname: 'lktbofrcgateucebizwd.supabase.co',
             }
         ]
     }
-};
+}; 
 
 export default nextConfig;

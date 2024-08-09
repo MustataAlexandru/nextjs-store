@@ -3,7 +3,8 @@ import {z , ZodSchema} from 'zod';
 import { currentUser, getAuth } from '@clerk/nextjs/server';
 import db from './db';
 import { redirect } from 'next/navigation';
-import { productSchema, validateWithZodSchema } from './schemas';
+import { productSchema, validateWithZodSchema , imageSchema} from './schemas';
+import { uploadImage } from './supabase';
 
 const getAuthUser = async () => {
     const user = await currentUser();
@@ -56,18 +57,21 @@ export const createProductAction = async (prevState: any, formData:FormData):Pro
     try {
         
         const rawData = Object.fromEntries(formData);
+        const file = formData.get('image') as File;
         const validatedFields = validateWithZodSchema(productSchema , rawData);
-
+        const validateFile = validateWithZodSchema(imageSchema , {image: file});
+       
+        const fullPath = await uploadImage(validateFile.image);
         await db.product.create({
             data: {
-                ...validatedFields, image:'/images/hero2.jpeg', clerkId: user.id
+                  ...validatedFields,
+                  image: fullPath,
+                  clerkId: user.id
             }
         })
-        
-       
-
-        return {message: 'Product created!'}
+              
     } catch (error) {
         return renderError(error);
     }
+    redirect('/admin/products')
 } 
